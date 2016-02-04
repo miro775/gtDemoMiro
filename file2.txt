@@ -1,1 +1,2 @@
 file2,  first line
+file2, line 3. add
