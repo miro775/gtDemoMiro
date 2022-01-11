@@ -1,0 +1,586 @@
+
+---------------------------------------------------------------------------------
+https://pypi.org/project/cbor/
+
+cbor-1.0.0.tar.gz
+
+pip install --trusted-host pypi.org --trusted-host files.pythonhosted.org c:\Users\JustMi\Downloads\python-packages\cbor-1.0.0.tar.gz  
+
+>>>
+C:\Users\JustMi>pip install --trusted-host pypi.org --trusted-host files.pythonhosted.org c:\Users\JustMi\Downloads\python-packages\cbor-1.0.0.tar.gz
+Processing c:\users\justmi\downloads\python-packages\cbor-1.0.0.tar.gz
+Building wheels for collected packages: cbor
+  Building wheel for cbor (setup.py) ... done
+  Created wheel for cbor: filename=cbor-1.0.0-py3-none-any.whl size=10049 sha256=c9f9269df1a830e4c6457db5756e7b27c66dcb6b05e54b5fe2954adae5a30f18
+  Stored in directory: c:\users\justmi\appdata\local\pip\cache\wheels\c4\b8\e4\bf497d47c082084b580729c34c3dc13c9f2981f4be38ee098e
+Successfully built cbor
+Installing collected packages: cbor
+Successfully installed cbor-1.0.0
+WARNING: You are using pip version 21.1.3; however, version 21.2.4 is available.
+You should consider upgrading via the 'c:\users\justmi\appdata\local\programs\python\python39\python.exe -m pip install --upgrade pip' command.
+
+--------------------------------------------------------------------------------
+
+>>  https://www.zive.cz/clanky/v-evropskem-ockovacim-qr-kodu-ktery-budete-ukazovat-na-dovolene-se-skryva-zakodovany-text-takhle-ho-prectete/sc-3-a-210469/default.aspx
+
+import zlib, base45, cbor, pprint
+print("Zkopíruj obsah QR kódu: ", end="")
+pprint.pprint(cbor.loads(cbor.loads(zlib.decompress(base45.b45decode(input()[4:]))).value[2]))
+
+
+
+
+
+https://betterprogramming.pub/how-to-generate-and-decode-qr-codes-in-python-a933bce56fd0
+
+https://www.geeksforgeeks.org/python-generate-qr-code-using-pyqrcode-module/
+
+
+https://python.plainenglish.io/generating-qr-codes-using-python-in-few-simple-steps-752f4d8dac2d
+https://python.plainenglish.io/generating-qr-codes-using-python-in-few-simple-steps-752f4d8dac2d
+
+
+https://pypi.org/project/Pillow/
+https://pypi.org/project/qrcode/
+
+
+
+
+pip install --trusted-host pypi.org --trusted-host files.pythonhosted.org c:\Users\JustMi\Downloads\python-packages\Pillow-8.3.1-1-cp39-cp39-win_amd64.whl
+pip install --trusted-host pypi.org --trusted-host files.pythonhosted.org c:\Users\JustMi\Downloads\python-packages\qrcode-7.3.tar.gz
+
+----------
+
+C:\Users\JustMi>pip install --trusted-host pypi.org --trusted-host files.pythonhosted.org c:\Users\JustMi\Downloads\python-packages\Pillow-8.3.1-1-cp39-cp39-win_amd64.whl
+
+Processing c:\users\justmi\downloads\python-packages\pillow-8.3.1-1-cp39-cp39-win_amd64.whl
+Installing collected packages: Pillow
+  Attempting uninstall: Pillow
+    Found existing installation: Pillow 8.2.0
+    Uninstalling Pillow-8.2.0:
+      Successfully uninstalled Pillow-8.2.0
+Successfully installed Pillow-8.3.1
+WARNING: You are using pip version 21.1.3; however, version 21.2.4 is available.
+You should consider upgrading via the 'c:\users\justmi\appdata\local\programs\python\python39\python.exe -m pip install --upgrade pip' command.
+
+C:\Users\JustMi>pip install --trusted-host pypi.org --trusted-host files.pythonhosted.org c:\Users\JustMi\Downloads\python-packages\qrcode-7.3.tar.gz
+
+Processing c:\users\justmi\downloads\python-packages\qrcode-7.3.tar.gz
+Requirement already satisfied: colorama in c:\users\justmi\appdata\local\programs\python\python39\lib\site-packages (from qrcode==7.3) (0.4.4)
+Building wheels for collected packages: qrcode
+  Building wheel for qrcode (setup.py) ... done
+  Created wheel for qrcode: filename=qrcode-7.3-py3-none-any.whl size=40231 sha256=58ba08289118135e117f9ab1d4ce3c06f49ce2872e269f679b94cace9ef194da
+  Stored in directory: c:\users\justmi\appdata\local\pip\cache\wheels\b5\17\55\42dca05ce54640e3f0d7c03b0ae904e2a9eee1b7fad2679c17
+Successfully built qrcode
+Installing collected packages: qrcode
+Successfully installed qrcode-7.3
+
+-----------------------------------------
+
+google:  eu covid certificate in python
+
+
+https://blog.hqcodeshop.fi/archives/516-Decoding-EU-Digital-COVID-Certificate.html
+https://github.com/HQJaTu/vacdec/tree/certificate-fetch
+
+he code is very short and should provide an easy way to understand how these certificates are encoded:
+
+The QR code encodes a string starting with "HC1:".
+The string following "HC1:" is base45 encoded.
+Decoding the base45 leads to zlib-compressed data.
+Decompression leads to a CBOR Web Token structure.
+Setup
+You will need:
+
+pillow for image handling
+pyzbar for reading QR-code
+base45, cbor2 and cose packages for RFC-8152 data structure reading : https://datatracker.ietf.org/doc/html/rfc8152
+
+
+
+
+https://pypi.org/project/cbor2/
+
+
+pip install --trusted-host pypi.org --trusted-host files.pythonhosted.org c:\Users\JustMi\Downloads\python-packages\cbor2-5.4.1-cp39-cp39-win_amd64.whl
+
+https://pypi.org/project/cryptojwt/
+
+pip install --trusted-host pypi.org --trusted-host files.pythonhosted.org c:\Users\JustMi\Downloads\python-packages\cryptojwt-1.5.2-py3-none-any.whl
+
+
+https://github.com/HQJaTu/vacdec/tree/certificate-fetch
+
+./vacdec --image-file [image]
+
+C:\Users\JustMi\PycharmProjects\eu_covid_cert1\QR_covid1cert_Miro.png
+
+vacdec --image-file C:\Users\JustMi\PycharmProjects\eu_covid_cert1\QR_covid1cert_Miro.png
+
+
+===================================
+C:\Users\JustMi\PycharmProjects\eu_covid_cert1\vacdec>python vacdec.py --image-file C:\Users\JustMi\PycharmProjects\eu_covid_cert1\QR_covid1cert_Miro.png
+2021-08-31 22:19:59,148 [INFO ]  Certificate is not signed
+2021-08-31 22:19:59,148 [INFO ]  Certificate as JSON: {
+  "1": "CZ",
+  "4": 1656675788,
+  "6": 1625139788,
+  "-260": {
+    "1": {
+      "v": [
+        {
+          "ci": "BB5WGXQ8PAAFGQ7YAKQKSYFUG75GK54N",
+          "co": "CZ",
+          "dn": 2,
+          "dt": "2021-07-01",
+          "is": "Ministry of Health of the Czech Republic",
+          "ma": "ORG-100030215",
+          "mp": "EU/1/20/1528",
+          "sd": 2,
+          "tg": "840539006",
+          "vp": "1119349007"
+        }
+      ],
+      "dob": "1974-12-31",
+      "nam": {
+        "fn": "JUST",
+        "gn": "MIROSLAV",
+        "fnt": "JUST",
+        "gnt": "MIROSLAV"
+      },
+      "ver": "1.0.1"
+    }
+  }
+}
+
+================================================================================
+
+https://www.iana.org/assignments/cbor-tags/cbor-tags.xhtml
+tag 18=	COSE_Sign1	COSE Single Signer Data Object	https://datatracker.ietf.org/doc/draft-ietf-cose-rfc8152bis-struct/15/
+
+
+C:\Users\JustMi\PycharmProjects\eu_covid_cert1\vacdec>python vacdec.py --image-file C:\Users\JustMi\PycharmProjects\eu_covid_cert1\QR_covid1cert_Miro.png
+<COSE_Sign1: [{'Algorithm': 'Es256'}, {'KID': b'{\x89G\xe8\x8e"0\x83'}, b'\xa4\x01bCZ' ... (269 B), b'+C\x93]o' ... (64 B)]>
+{<class 'cose.headers.Algorithm'>: <class 'cose.algorithms.Es256'>}
+2021-08-31 22:29:29,101 [INFO ]  Certificate is not signed
+2021-08-31 22:29:29,102 [INFO ]  Certificate as JSON: {
+  "1": "CZ",
+  "4": 1656675788,
+  "6": 1625139788,
+  "-260": {
+    "1": {
+      "v": [
+        {
+          "ci": "BB5WGXQ8PAAFGQ7YAKQKSYFUG75GK54N",
+          "co": "CZ",
+          "dn": 2,
+          "dt": "2021-07-01",
+          "is": "Ministry of Health of the Czech Republic",
+          "ma": "ORG-100030215",
+          "mp": "EU/1/20/1528",
+          "sd": 2,
+          "tg": "840539006",
+          "vp": "1119349007"
+        }
+      ],
+      "dob": "1974-12-31",
+      "nam": {
+        "fn": "JUST",
+        "gn": "MIROSLAV",
+        "fnt": "JUST",
+        "gnt": "MIROSLAV"
+      },
+      "ver": "1.0.1"
+    }
+  }
+}
+
+========= !! <<<  https://alphalist.com/blog/the-use-of-blockchain-for-verification-eu-vaccines-passport-program-and-more
+
+EU covid certificate https://github.com/HQJaTu/vacdec/tree/signature-verification
+@
+https://frank.sauerburger.io/2021/06/16/decode-vaccination-certification.html
+@ cosemessage
+https://pycose.readthedocs.io/en/latest/
+
+https://pycose.readthedocs.io/en/latest/
+
+What is COSE?
+CBOR Object Signing and Encryption (COSE) is a data format for concise representation of small messages. 
+It is optimized for low-power devices. COSE messages can be encrypted, MAC’ed and signed. 
+The basic structure of a COSE message consists of 2 information buckets and the payload:
+
+Protected header: This message field contains information that needs to be protected. 
+This information is taken into account during the encryption, 
+calculation of the MAC or the signature.
+Unprotected header: The information contained in the unprotected header is not protected by the cryptographic algorithms.
+Payload: Contains the payload of the message (protected by the cryptographic algorithms).
+
+Sign1: A signed COSE message with a single signature.
+
+
+-------------------------------------------------------------------------
+
+# puvodni verze  1.7.2021
+HC1:NCFOXN*TS0BI$ZDFRHE*E0 VO%7GUG769Y3S3XHW3Q6R5*F9L7U4FC3K9EXNFAPQHIZC4.OI1RM8ZA*LPVT2L+9G4LF4UGEG%80C0I$6UU6TY2I IG8LOG:D39UT4LS6S:%4YE9/MVEK0*LA/CJ6IAXPMHQ1*P1MX1+ZEOQ1OH6ZK5PVFNXUJRH0LH%Y2 UQ7S7TK24H9-78VNI:RA-CT5-QAQ1.EKAOGK KR+P*$K3$OHBW24FAL86H0YQCIA2IE9WT0K3M9UVZSVV*001HW%8UE9.955B9-NT0 2$$0X4PCY0+-CVYCDEBD0HX2JR$4O1K8KES/F-1JZ.KBIH6JK 3MGEC.-B97U: K/YN8AMNHSI%KZYN25CW74$6C0BP3-S-YNHDMBLE/*BLJ8FT5D75W9AV88H76TE8+FFSXDMGR8*LRM5S+QF4QV.8-RV$4782F5$8YCSD2RA+O* 9B7RAOGF7GV8U*Z0B:VL8S+$C/LRHSC0LV0%G3AODO1.-760K9/S%00SE1D1
+
+# ocko,uzis, download 1.9.2021,  certi. identifikator:  URN:UVCI:01:CZ:YJUECJ77ZGMQ38DT4D2KU9KSBT7DBZQZ
+HC1:NCFTZ8VX7OD0%20XKNZSRIC6U48MOKF$UKFV-%TCFH.CQ$VKVR7FNPX6UGEUKP6:R2I O JKDD4EDJ 1N.IE1X9HB8PPDFS8CB8-P6P*H--MJX50DQ*R1N3W+5AR+8K9VP3P.JS0UEB-TCCH$H7QR0A8UFM0D.NL4H-*D:BF1+A%RTD%CZHGJ/BER4.JQKX4W9I:78Z44FOA3ED3314XJ2DHW43V28IWVIGFW7KEXVJ$JD15$VCMM18/3+-P:YK%97MGQHN0-618TQU0R6BHKST VLJ4TL KMB8MKPRLRQQM.MJIAB-BERA5R.OX I*96PO23E5Z49620HNN0:6RPHEC70KG%T1NITYZ7/%L0341UKRAB..C%00LEASCJI626S1$V6-RL*YIYU7ZNIX 4IAHK:ODVKIJLF-KSD0.$PRP4C/8PL1YD92-6R9O$N6+0VSL59D94-5ZV0B6D4/9*B58DWJD0NDU/4F.2QAM7G/0R1BHUG5-2GIE5RQ94NBSGVHDZ9BDU3C/L/RTV2E.%D0MORSV43KOAP+SJYYRE09LK27EG
+
+
+
+
+# 1.9.2021,  moje nova verze QR covid certif, stazena 1.9. z ocko.uzis,  je to v 1.3.0:
+
+---# nove verze:
+
+{-260: {1: {'dob': '1974-12-31',
+            'nam': {'fn': 'JUST',
+                    'fnt': 'JUST',
+                    'gn': 'MIROSLAV',
+                    'gnt': 'MIROSLAV'},
+            'v': [{'ci': 'URN:UVCI:01:CZ:YJUECJ77ZGMQ38DT4D2KU9KSBT7DBZQZ',
+                   'co': 'CZ',
+                   'dn': 2,
+                   'dt': '2021-07-01',
+                   'is': 'Ministry of Health of the Czech Republic',
+                   'ma': 'ORG-100030215',
+                   'mp': 'EU/1/20/1528',
+                   'sd': 2,
+                   'tg': '840539006',
+                   'vp': '1119349007'}],
+            'ver': '1.3.0'}},
+ 1: 'CZ',
+ 4: 1662038147,
+ 6: 1630502147}
+
+====================================================================
+
+C:\Users\JustMi\Documents\_Education_miro\dgc-eu-certificate-covid\scan-from-QR\IMG_20210901_miro_QR_foto.jpg
+
+C:\Users\JustMi\PycharmProjects\eu_covid_cert1\vacdec>python vacdec.py --image-file C:\Users\JustMi\Documents\_Education_miro\dgc-eu-certificate-covid\scan-from-QR\IMG_20210901_miro_QR_foto.jpg
+Traceback (most recent call last):
+  File "C:\Users\JustMi\PycharmProjects\eu_covid_cert1\vacdec\vacdec.py", line 310, in <module>
+    main()
+  File "C:\Users\JustMi\PycharmProjects\eu_covid_cert1\vacdec\vacdec.py", line 297, in main
+    covid_cert_data = data[0].data.decode()
+IndexError: list index out of range
+
+<<<<<<<<,,    qr code  odfoteny cez mobil z certifikatu,  ?? nutno oriznout?
+
+
+python vacdec.py --raw-string "HC1:NCFTZ8VX7OD0%20XKNZSRIC6U48MOKF$UKFV-%TCFH.CQ$VKVR7FNPX6UGEUKP6:R2I O JKDD4EDJ 1N.IE1X9HB8PPDFS8CB8-P6P*H--MJX50DQ*R1N3W+5AR+8K9VP3P.JS0UEB-TCCH$H7QR0A8UFM0D.NL4H-*D:BF1+A%RTD%CZHGJ/BER4.JQKX4W9I:78Z44FOA3ED3314XJ2DHW43V28IWVIGFW7KEXVJ$JD15$VCMM18/3+-P:YK%97MGQHN0-618TQU0R6BHKST VLJ4TL KMB8MKPRLRQQM.MJIAB-BERA5R.OX I*96PO23E5Z49620HNN0:6RPHEC70KG%T1NITYZ7/%L0341UKRAB..C%00LEASCJI626S1$V6-RL*YIYU7ZNIX 4IAHK:ODVKIJLF-KSD0.$PRP4C/8PL1YD92-6R9O$N6+0VSL59D94-5ZV0B6D4/9*B58DWJD0NDU/4F.2QAM7G/0R1BHUG5-2GIE5RQ94NBSGVHDZ9BDU3C/L/RTV2E.%D0MORSV43KOAP+SJYYRE09LK27EG"
+
+## OK:
+
+
+C:\Users\JustMi\PycharmProjects\eu_covid_cert1\vacdec>python vacdec.py --raw-string "HC1:NCFTZ8VX7OD0%20XKNZSRIC6U48MOKF$UKFV-%TCFH.CQ$VKVR7FNPX6UGEUKP6:R2I O JKDD4EDJ 1N.IE1X9HB8PPDFS8CB8-P6P*H--MJX50DQ*R1N3W+5AR+8K9VP3P.JS0UEB-TCCH$H7QR0A8UFM0D.NL4H-*D:BF1+A%RTD%CZHGJ/BER4.JQKX4W9I:78Z44FOA3ED3314XJ2DHW43V28IWVIGFW7KEXVJ$JD15$VCMM18/3+-P:YK%97MGQHN0-618TQU0R6BHKST VLJ4TL KMB8MKPRLRQQM.MJIAB-BERA5R.OX I*96PO23E5Z49620HNN0:6RPHEC70KG%T1NITYZ7/%L0341UKRAB..C%00LEASCJI626S1$V6-RL*YIYU7ZNIX 4IAHK:ODVKIJLF-KSD0.$PRP4C/8PL1YD92-6R9O$N6+0VSL59D94-5ZV0B6D4/9*B58DWJD0NDU/4F.2QAM7G/0R1BHUG5-2GIE5RQ94NBSGVHDZ9BDU3C/L/RTV2E.%D0MORSV43KOAP+SJYYRE09LK27EG"
+<COSE_Sign1: [{'Algorithm': 'Es256'}, {'KID': b'{\x89G\xe8\x8e"0\x83'}, b'\xa4\x01bCZ' ... (284 B), b'\xcc\x8dR<m' ... (64 B)]>
+{<class 'cose.headers.Algorithm'>: <class 'cose.algorithms.Es256'>}
+2021-09-01 15:53:22,115 [INFO ]  Certificate is not signed
+{<class 'cose.headers.KID'>: b'{\x89G\xe8\x8e"0\x83'}
+None
+2021-09-01 15:53:22,116 [INFO ]  Certificate as JSON: {
+  "1": "CZ",
+  "4": 1662038147,
+  "6": 1630502147,
+  "-260": {
+    "1": {
+      "v": [
+        {
+          "ci": "URN:UVCI:01:CZ:YJUECJ77ZGMQ38DT4D2KU9KSBT7DBZQZ",
+          "co": "CZ",
+          "dn": 2,
+          "dt": "2021-07-01",
+          "is": "Ministry of Health of the Czech Republic",
+          "ma": "ORG-100030215",
+          "mp": "EU/1/20/1528",
+          "sd": 2,
+          "tg": "840539006",
+          "vp": "1119349007"
+        }
+      ],
+      "dob": "1974-12-31",
+      "nam": {
+        "fn": "JUST",
+        "gn": "MIROSLAV",
+        "fnt": "JUST",
+        "gnt": "MIROSLAV"
+      },
+      "ver": "1.3.0"
+    }
+  }
+}
+
+------------->>>
+
+C:\Users\JustMi\PycharmProjects\eu_covid_cert1\vacdec>python vacdec.py --raw-string "HC1:NCFTZ8VX7OD0%20XKNZSRIC6U48MOKF$UKFV-%TCFH.CQ$VKVR7FNPX6UGEUKP6:R2I O JKDD4EDJ 1N.IE1X9HB8PPDFS8CB8-P6P*H--MJX50DQ*R1N3W+5AR+8K9VP3P.JS0UEB-TCCH$H7QR0A8UFM0D.NL4H-*D:BF1+A%RTD%CZHGJ/BER4.JQKX4W9I:78Z44FOA3ED3314XJ2DHW43V28IWVIGFW7KEXVJ$JD15$VCMM18/3+-P:YK%97MGQHN0-618TQU0R6BHKST VLJ4TL KMB8MKPRLRQQM.MJIAB-BERA5R.OX I*96PO23E5Z49620HNN0:6RPHEC70KG%T1NITYZ7/%L0341UKRAB..C%00LEASCJI626S1$V6-RL*YIYU7ZNIX 4IAHK:ODVKIJLF-KSD0.$PRP4C/8PL1YD92-6R9O$N6+0VSL59D94-5ZV0B6D4/9*B58DWJD0NDU/4F.2QAM7G/0R1BHUG5-2GIE5RQ94NBSGVHDZ9BDU3C/L/RTV2E.%D0MORSV43KOAP+SJYYRE09LK27EG"
+<COSE_Sign1: [{'Algorithm': 'Es256'}, {'KID': b'{\x89G\xe8\x8e"0\x83'}, b'\xa4\x01bCZ' ... (284 B), b'\xcc\x8dR<m' ... (64 B)]>
+{<class 'cose.headers.Algorithm'>: <class 'cose.algorithms.Es256'>}
+2021-09-01 20:35:26,184 [INFO ]  Protected header key reference missing, using the unprotected one
+2021-09-01 20:35:26,185 [INFO ]  COVID certificate signed with X.509 certificate.
+2021-09-01 20:35:26,186 [INFO ]  X.509 in DER form has SHA-256 beginning with: 7b8947e88e223083
+2021-09-01 20:35:26,189 [INFO ]  Found the key from DB!
+2021-09-01 20:35:26,206 [INFO ]  Signature verified ok
+{<class 'cose.headers.KID'>: b'{\x89G\xe8\x8e"0\x83'}
+<COSE_Key(EC2Key): {'EC2KpY': "b'\\xa1\\xb2\\x7f\\xa6\\xe6' ... (32 B)", 'EC2KpX': "b'P\\x8c\\xd2\\xab\\x93' ... (32 B)", 'EC2KpCurve': 'P256', 'KpKty': 'KtyEC2', 'KpKid': b'7b8947e88e223083', 'KpKeyOps': ['VerifyOp']}>
+2021-09-01 20:35:26,212 [INFO ]  Certificate as JSON: {
+  "1": "CZ",
+  "4": 1662038147,
+  "6": 1630502147,
+  "-260": {
+    "1": {
+      "v": [
+        {
+          "ci": "URN:UVCI:01:CZ:YJUECJ77ZGMQ38DT4D2KU9KSBT7DBZQZ",
+          "co": "CZ",
+          "dn": 2,
+          "dt": "2021-07-01",
+          "is": "Ministry of Health of the Czech Republic",
+          "ma": "ORG-100030215",
+          "mp": "EU/1/20/1528",
+          "sd": 2,
+          "tg": "840539006",
+          "vp": "1119349007"
+        }
+      ],
+      "dob": "1974-12-31",
+      "nam": {
+        "fn": "JUST",
+        "gn": "MIROSLAV",
+        "fnt": "JUST",
+        "gnt": "MIROSLAV"
+      },
+      "ver": "1.3.0"
+    }
+  }
+}
+
+
+
+----------
+C:\Users\JustMi\PycharmProjects\eu_covid_cert1\vacdec>python vacdec.py --image-file C:\Users\JustMi\PycharmProjects\eu_covid_cert1\QR_covid1cert_Miro.png
+<COSE_Sign1: [{'Algorithm': 'Es256'}, {'KID': b'{\x89G\xe8\x8e"0\x83'}, b'\xa4\x01bCZ' ... (269 B), b'+C\x93]o' ... (64 B)]>
+{<class 'cose.headers.Algorithm'>: <class 'cose.algorithms.Es256'>}
+2021-09-01 20:01:23,776 [INFO ]  Protected header key reference missing, using the unprotected one
+2021-09-01 20:01:23,777 [INFO ]  COVID certificate signed with X.509 certificate.
+2021-09-01 20:01:23,778 [INFO ]  X.509 in DER form has SHA-256 beginning with: 7b8947e88e223083
+2021-09-01 20:01:23,792 [INFO ]  Found the key from DB!
+2021-09-01 20:01:23,810 [INFO ]  Signature verified ok
+{<class 'cose.headers.KID'>: b'{\x89G\xe8\x8e"0\x83'}
+<COSE_Key(EC2Key): {'EC2KpY': "b'\\xa1\\xb2\\x7f\\xa6\\xe6' ... (32 B)", 'EC2KpX': "b'P\\x8c\\xd2\\xab\\x93' ... (32 B)", 'EC2KpCurve': 'P256', 'KpKty': 'KtyEC2', 'KpKid': b'7b8947e88e223083', 'KpKeyOps': ['VerifyOp']}>
+2021-09-01 20:01:23,817 [INFO ]  Certificate as JSON: {
+  "1": "CZ",
+  "4": 1656675788,
+  "6": 1625139788,
+  "-260": {
+    "1": {
+      "v": [
+        {
+          "ci": "BB5WGXQ8PAAFGQ7YAKQKSYFUG75GK54N",
+          "co": "CZ",
+          "dn": 2,
+          "dt": "2021-07-01",
+          "is": "Ministry of Health of the Czech Republic",
+          "ma": "ORG-100030215",
+          "mp": "EU/1/20/1528",
+          "sd": 2,
+          "tg": "840539006",
+          "vp": "1119349007"
+        }
+      ],
+      "dob": "1974-12-31",
+      "nam": {
+        "fn": "JUST",
+        "gn": "MIROSLAV",
+        "fnt": "JUST",
+        "gnt": "MIROSLAV"
+      },
+      "ver": "1.0.1"
+    }
+  }
+}
+
+------------------
+
+python vacdec.py --image-file C:\Users\JustMi\Documents\_Education_miro\dgc-eu-certificate-covid\scan-from-QR\Sweden_5.png
+
+
+C:\Users\JustMi\PycharmProjects\eu_covid_cert1\vacdec>python vacdec.py --image-file C:\Users\JustMi\Documents\_Education_miro\dgc-eu-certificate-covid\scan-from-QR\Sweden_5.png
+<COSE_Sign1: [{'Algorithm': 'Es256', 'KID': b'_t\x91\x01\x95\xc5\xce\xcb'}, {}, b'\xa4\x01bSE' ... (226 B), b'\x91\xb8=\x93\xa0' ... (64 B)]>
+{<class 'cose.headers.KID'>: b'_t\x91\x01\x95\xc5\xce\xcb',
+ <class 'cose.headers.Algorithm'>: <class 'cose.algorithms.Es256'>}
+2021-09-01 20:37:04,353 [INFO ]  COVID certificate signed with X.509 certificate.
+2021-09-01 20:37:04,353 [INFO ]  X.509 in DER form has SHA-256 beginning with: 5f74910195c5cecb
+2021-09-01 20:37:04,356 [INFO ]  Skip verify as no key found from database
+{}
+None
+2021-09-01 20:37:04,358 [INFO ]  Certificate as JSON: {
+  "1": "SE",
+  "4": 1631526603,
+  "6": 1623750603,
+  "-260": {
+    "1": {
+      "r": [
+        {
+          "ci": "URN:UVCI:01:SE:EHM/R987765321",
+          "co": "SE",
+          "df": "2021-06-15",
+          "du": "2021-09-13",
+          "fr": "2021-06-04",
+          "is": "Swedish eHealth Agency",
+          "tg": "840539006"
+        }
+      ],
+      "dob": "1958-11-11",
+      "nam": {
+        "fn": "Lövström",
+        "gn": "Oscar",
+        "fnt": "LOEVSTROEM",
+        "gnt": "OSCAR"
+      },
+      "ver": "1.3.0"
+    }
+  }
+}
+
+----------------------------- sample:
+
+cose_key_dict = {
+    KpKty: KtyOKP,
+    OKPKpCurve: Ed25519,
+    KpKeyOps: [SignOp, VerifyOp],
+    OKPKpD: unhexlify(b'9d61b19deffd5a60ba844af492ec2cc44449c5697b326919703bac031cae7f60'),
+    OKPKpX: unhexlify(b'd75a980182b10ab7d54bfed3c964073a0ee172f3daa62325af021a68f707511a')}
+
+key_dict = {'crv': key_data['publicKeyAlgorithm']['namedCurve'],  # 'P-256'
+            'kid': key_id_binary.hex(),
+            'kty': key_data['publicKeyAlgorithm']['name'][:2],  # 'EC'
+            'x': x,  # 'eIBWXSaUgLcxfjhChSkV_TwNNIhddCs2Rlo3tdD671I'
+            'y': y,  # 'R1XB4U5j_IxRgIOTBUJ7exgz0bhen4adlbHkrktojjo'
+            }
+
+
+-------------------------------------
+binascii.hexlify('A')
+'41'
+
+binascii.unhexlify('41')
+'A'
+
+
+
+print(unhexlify(b'57c92077664146e876760c9520d054aa93c3afb04e306705db6090308507b4d3'))  # b'W\xc9 wfAF\xe8vv\x0c\x95 \xd0T\xaa\x93\xc3\xaf\xb0N0g\x05\xdb`\x900\x85\x07\xb4\xd3'
+print( hexlify(b'W\xc9 wfAF\xe8vv\x0c\x95 \xd0T\xaa\x93\xc3\xaf\xb0N0g\x05\xdb`\x900\x85\x07\xb4\xd3')) # b'57c92077664146e876760c9520d054aa93c3afb04e306705db6090308507b4d3'
+
+
+
+====================================================================================================================
+
+C:\Users\JustMi\PycharmProjects\eu_covid_cert1\vacdec>python vacdec.py --raw-string "HC1:NCFTZ8VX7OD0%20XKNZSRIC6U48MOKF$UKFV-%TCFH.CQ$VKVR7FNPX6UGEUKP6:R2I O JKDD4EDJ 1N.IE1X9HB8PPDFS8CB8-P6P*H--MJX50DQ*R1N3W+5AR+8K9VP3P.JS0UEB-TCCH$H7QR0A8UFM0D.NL4H-*D:BF1+A%RTD%CZHGJ/BER4.JQKX4W9I:78Z44FOA3ED3314XJ2DHW43V28IWVIGFW7KEXVJ$JD15$VCMM18/3+-P:YK%97MGQHN0-618TQU0R6BHKST VLJ4TL KMB8MKPRLRQQM.MJIAB-BERA5R.OX I*96PO23E5Z49620HNN0:6RPHEC70KG%T1NITYZ7/%L0341UKRAB..C%00LEASCJI626S1$V6-RL*YIYU7ZNIX 4IAHK:ODVKIJLF-KSD0.$PRP4C/8PL1YD92-6R9O$N6+0VSL59D94-5ZV0B6D4/9*B58DWJD0NDU/4F.2QAM7G/0R1BHUG5-2GIE5RQ94NBSGVHDZ9BDU3C/L/RTV2E.%D0MORSV43KOAP+SJYYRE09LK27EG"
+2021-09-01 23:20:37,910 [INFO ]   ### decompressed=b'\xd2\x84C\xa1\x01&\xa1\x04H{\x89G\xe8\x8e"0\x83Y\x01\x1c\xa4\x01bCZ\x04\x1ac\x10\xb0\x83\x06\x1aa/}\x039\x01\x03\xa1\x01\xa4av\x81\xaabcix/URN:UVCI:01:CZ:YJUECJ77ZGMQ38DT4D2KU9KSBT7DBZQZbcobCZbdn\x02bdtj2021-07-01bisx(Ministry of Health of the Czech RepublicbmamORG-100030215bmplEU/1/20/1528bsd\x02btgi840539006bvpj1119349007cdobj1974-12-31cnam\xa4bfndJUSTbgnhMIROSLAVcfntdJUSTcgnthMIROSLAVcvere1.3.0X@\xcc\x8dR<m\x0e\xd6*0\xae\x82z\xc1\x1c\x94\x9e\xc1\x8b\x85\xf3\xa3P\x18\x96\x973\x01\x89\xde\xb0\xad\xaft\x85\xd4>R\x8ce\xc3\x1dIk.\xa4\xda\xe4\xbf\xb0e\xaa4\xaf\x07\xeb\xdb\xfb)\xad|\xfa~\xe2\x8b'
+
+2021-09-01 23:20:37,913 [INFO ]   *** cose_msg=<COSE_Sign1: [{'Algorithm': 'Es256'}, {'KID': b'{\x89G\xe8\x8e"0\x83'}, b'\xa4\x01bCZ' ... (284 B), b'\xcc\x8dR<m' ... (64 B)]>
+
+2021-09-01 23:20:37,916 [INFO ]  Protected header key reference missing, using the unprotected one
+2021-09-01 23:20:37,917 [INFO ]  COVID certificate signed with X.509 certificate.
+2021-09-01 23:20:37,917 [INFO ]  X.509 in DER form has SHA-256 beginning with: 7b8947e88e223083
+2021-09-01 23:20:37,918 [INFO ]  Check if certificate certs/7b8947e88e223083.pem exists.
+2021-09-01 23:20:37,921 [INFO ]  Found the key from DB!
+{'serialNumber': '00f09d424412274033', 'subject': 'C=CZ, O=MZCR, CN=CZ DSC 1', 'issuer': 'C=CZ, O=MZCR, CN=CZ DSC CSCA 1', 'notBefore': '2021-05-06T14:24:00.000Z', 'notAfter': '2023-05-06T14:24:00.000Z', 'signatureAlgorithm': 'RSASSA-PKCS1-v1_5', 'fingerprint': '734c0982d3b2d50ca981a11cf529eb70d89e1478', 'publicKeyAlgorithm': {'hash': {'name': 'SHA-256'}, 'name': 'ECDSA', 'namedCurve': 'P-256'}, 'publicKeyPem': 'MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEUIzSq5MMYg2oez/kdjVH73ZPmI3lAQZTJsLOGqhJNcahsn+m5vFLeODWFM6/hXQGSL56sIjbKMrYa17lKNAKUw=='}
+{'crv': 'P-256', 'kid': '7b8947e88e223083', 'kty': 'EC', 'x': 'UIzSq5MMYg2oez_kdjVH73ZPmI3lAQZTJsLOGqhJNcY=', 'y': 'obJ_pubxS3jg1hTOv4V0Bki-erCI2yjK2Gte5SjQClM='}
+2021-09-01 23:20:37,943 [INFO ]  Signature verified ok
+2021-09-01 23:20:37,947 [INFO ]  cose_msg.uhdr={<class 'cose.headers.KID'>: b'{\x89G\xe8\x8e"0\x83'}
+2021-09-01 23:20:37,948 [INFO ]  cose_msg.phdr={<class 'cose.headers.Algorithm'>: <class 'cose.algorithms.Es256'>}
+2021-09-01 23:20:37,949 [INFO ]  cose_msg.key=<COSE_Key(EC2Key): {'EC2KpY': "b'\\xa1\\xb2\\x7f\\xa6\\xe6' ... (32 B)", 'EC2KpX': "b'P\\x8c\\xd2\\xab\\x93' ... (32 B)", 'EC2KpCurve': 'P256', 'KpKty': 'KtyEC2', 'KpKid': b'7b8947e88e223083', 'KpKeyOps': ['VerifyOp']}>
+2021-09-01 23:20:37,951 [INFO ]  cose_msg.payload=b'\xa4\x01bCZ\x04\x1ac\x10\xb0\x83\x06\x1aa/}\x039\x01\x03\xa1\x01\xa4av\x81\xaabcix/URN:UVCI:01:CZ:YJUECJ77ZGMQ38DT4D2KU9KSBT7DBZQZbcobCZbdn\x02bdtj2021-07-01bisx(Ministry of Health of the Czech RepublicbmamORG-100030215bmplEU/1/20/1528bsd\x02btgi840539006bvpj1119349007cdobj1974-12-31cnam\xa4bfndJUSTbgnhMIROSLAVcfntdJUSTcgnthMIROSLAVcvere1.3.0'
+2021-09-01 23:20:37,952 [INFO ]  Certificate as JSON: {
+  "1": "CZ",
+  "4": 1662038147,
+  "6": 1630502147,
+  "-260": {
+    "1": {
+      "v": [
+        {
+          "ci": "URN:UVCI:01:CZ:YJUECJ77ZGMQ38DT4D2KU9KSBT7DBZQZ",
+          "co": "CZ",
+          "dn": 2,
+          "dt": "2021-07-01",
+          "is": "Ministry of Health of the Czech Republic",
+          "ma": "ORG-100030215",
+          "mp": "EU/1/20/1528",
+          "sd": 2,
+          "tg": "840539006",
+          "vp": "1119349007"
+        }
+      ],
+      "dob": "1974-12-31",
+      "nam": {
+        "fn": "JUST",
+        "gn": "MIROSLAV",
+        "fnt": "JUST",
+        "gnt": "MIROSLAV"
+      },
+      "ver": "1.3.0"
+    }
+  }
+}
+
+
+-----------------toto funguje, Tomas Lanc.
+
+python vacdec.py --raw-string "HC1:6BFOXN TSMAHN-H V4NO648DJS4JZO92P1AT-%2YVCNX1AVD.JHA:MK1JZZPQA36S4HZ6SH9X5QSDQFY1OSMNV1L8VNF6O MZ1IMPHME13-EUF626IKAV*T6G7ECB66E6U%1I%UN-EIB6-FE0F1SH932QKOJ9ZIHAPZXI$MI1VCSWC%PDB2MN9C.XI/VBKNSYIJGDBGIASJLA8KOHSLOJJPA*70**I-XKN57N*K%1DJQ0K%2C-4XTC/15D-4HRVUMNMD3323R139%HO$9KZ56DE/.QC$Q3J62:6LZ6O59++9-G9+E93ZM$96PZ6+Q6X46+E5+DP:Q67ZMA$6BVU5SI:TU+MMPZ5SZ9BT1X%EPS5 WUQRELS4J1TLSVMSVWWT /KT-KJLV4F7Q0531T178CPI%EGTAHUDBQEAJJKKKMWC8XN8 VV+1639FTZONOEGBQS7A6FIVVVU5AQ3ULOJU6RD5M/ME4TGIO3ENUVCBEWF0$FXTNBKAZT4B4SKLLAX8$XM4NR%6K9*DT:M7:TT40 68Z2"
+
+6BFOXN TSMAHN-H V4NO648DJS4JZO92P1AT-%2YVCNX1AVD.JHA:MK1JZZPQA36S4HZ6SH9X5QSDQFY1OSMNV1L8VNF6O MZ1IMPHME13-EUF626IKAV*T6G7ECB66E6U%1I%UN-EIB6-FE0F1SH932QKOJ9ZIHAPZXI$MI1VCSWC%PDB2MN9C.XI/VBKNSYIJGDBGIASJLA8KOHSLOJJPA*70**I-XKN57N*K%1DJQ0K%2C-4XTC/15D-4HRVUMNMD3323R139%HO$9KZ56DE/.QC$Q3J62:6LZ6O59++9-G9+E93ZM$96PZ6+Q6X46+E5+DP:Q67ZMA$6BVU5SI:TU+MMPZ5SZ9BT1X%EPS5 WUQRELS4J1TLSVMSVWWT /KT-KJLV4F7Q0531T178CPI%EGTAHUDBQEAJJKKKMWC8XN8 VV+1639FTZONOEGBQS7A6FIVVVU5AQ3ULOJU6RD5M/ME4TGIO3ENUVCBEWF0$FXTNBKAZT4B4SKLLAX8$XM4NR%6K9*DT:M7:TT40 68Z2"
+
+---------------------------------------------
+
+
+C:\Users\JustMi\PycharmProjects\eu_covid_cert1\vacdec>python vacdec.py --raw-string "HC1:NCFTZ8VX7OD0%20XKNZSRIC6U48MOKF$UKFV-%TCFH.CQ$VKVR7FNPX6UGEUKP6:R2I O JKDD4EDJ 1N.IE1X9HB8PPDFS8CB8-P6P*H--MJX50DQ*R1N3W+5AR+8K9VP3P.JS0UEB-TCCH$H7QR0A8UFM0D.NL4H-*D:BF1+A%RTD%CZHGJ/BER4.JQKX4W9I:78Z44FOA3ED3314XJ2DHW43V28IWVIGFW7KEXVJ$JD15$VCMM18/3+-P:YK%97MGQHN0-618TQU0R6BHKST VLJ4TL KMB8MKPRLRQQM.MJIAB-BERA5R.OX I*96PO23E5Z49620HNN0:6RPHEC70KG%T1NITYZ7/%L0341UKRAB..C%00LEASCJI626S1$V6-RL*YIYU7ZNIX 4IAHK:ODVKIJLF-KSD0.$PRP4C/8PL1YD92-6R9O$N6+0VSL59D94-5ZV0B6D4/9*B58DWJD0NDU/4F.2QAM7G/0R1BHUG5-2GIE5RQ94NBSGVHDZ9BDU3C/L/RTV2E.%D0MORSV43KOAP+SJYYRE09LK27EG"
+2021-09-02 21:44:38,868 [INFO ]   ### decompressed=b'\xd2\x84C\xa1\x01&\xa1\x04H{\x89G\xe8\x8e"0\x83Y\x01\x1c\xa4\x01bCZ\x04\x1ac\x10\xb0\x83\x06\x1aa/}\x039\x01\x03\xa1\x01\xa4av\x81\xaabcix/URN:UVCI:01:CZ:YJUECJ77ZGMQ38DT4D2KU9KSBT7DBZQZbcobCZbdn\x02bdtj2021-07-01bisx(Ministry of Health of the Czech RepublicbmamORG-100030215bmplEU/1/20/1528bsd\x02btgi840539006bvpj1119349007cdobj1974-12-31cnam\xa4bfndJUSTbgnhMIROSLAVcfntdJUSTcgnthMIROSLAVcvere1.3.0X@\xcc\x8dR<m\x0e\xd6*0\xae\x82z\xc1\x1c\x94\x9e\xc1\x8b\x85\xf3\xa3P\x18\x96\x973\x01\x89\xde\xb0\xad\xaft\x85\xd4>R\x8ce\xc3\x1dIk.\xa4\xda\xe4\xbf\xb0e\xaa4\xaf\x07\xeb\xdb\xfb)\xad|\xfa~\xe2\x8b'
+
+2021-09-02 21:44:38,871 [INFO ]   *** cose_msg=<COSE_Sign1: [{'Algorithm': 'Es256'}, {'KID': b'{\x89G\xe8\x8e"0\x83'}, b'\xa4\x01bCZ' ... (284 B), b'\xcc\x8dR<m' ... (64 B)]>
+
+2021-09-02 21:44:38,874 [INFO ]  Protected header key reference missing, using the unprotected one
+2021-09-02 21:44:38,875 [INFO ]  COVID certificate signed with X.509 certificate. kid=b'{\x89G\xe8\x8e"0\x83'
+2021-09-02 21:44:38,876 [INFO ]  X.509 in DER form has SHA-256 beginning with [kid.hex()]: 7b8947e88e223083
+2021-09-02 21:44:38,876 [INFO ]  Check if certificate certs/7b8947e88e223083.pem exists.
+2021-09-02 21:44:38,879 [INFO ]  Found the key from DB!
+{'serialNumber': '00f09d424412274033', 'subject': 'C=CZ, O=MZCR, CN=CZ DSC 1', 'issuer': 'C=CZ, O=MZCR, CN=CZ DSC CSCA 1', 'notBefore': '2021-05-06T14:24:00.000Z', 'notAfter': '2023-05-06T14:24:00.000Z', 'signatureAlgorithm': 'RSASSA-PKCS1-v1_5', 'fingerprint': '734c0982d3b2d50ca981a11cf529eb70d89e1478', 'publicKeyAlgorithm': {'hash': {'name': 'SHA-256'}, 'name': 'ECDSA', 'namedCurve': 'P-256'}, 'publicKeyPem': 'MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEUIzSq5MMYg2oez/kdjVH73ZPmI3lAQZTJsLOGqhJNcahsn+m5vFLeODWFM6/hXQGSL56sIjbKMrYa17lKNAKUw=='}
+{'crv': 'P-256', 'kid': '7b8947e88e223083', 'kty': 'EC', 'x': 'UIzSq5MMYg2oez_kdjVH73ZPmI3lAQZTJsLOGqhJNcY=', 'y': 'obJ_pubxS3jg1hTOv4V0Bki-erCI2yjK2Gte5SjQClM='}
+2021-09-02 21:44:38,902 [INFO ]  Signature verified ok
+2021-09-02 21:44:38,906 [INFO ]  cose_msg.uhdr={<class 'cose.headers.KID'>: b'{\x89G\xe8\x8e"0\x83'}
+2021-09-02 21:44:38,906 [INFO ]  cose_msg.phdr={<class 'cose.headers.Algorithm'>: <class 'cose.algorithms.Es256'>}
+2021-09-02 21:44:38,907 [INFO ]  cose_msg.key=<COSE_Key(EC2Key): {'EC2KpY': "b'\\xa1\\xb2\\x7f\\xa6\\xe6' ... (32 B)", 'EC2KpX': "b'P\\x8c\\xd2\\xab\\x93' ... (32 B)", 'EC2KpCurve': 'P256', 'KpKty': 'KtyEC2', 'KpKid': b'7b8947e88e223083', 'KpKeyOps': ['VerifyOp']}>
+2021-09-02 21:44:38,909 [INFO ]  cose_msg.payload=b'\xa4\x01bCZ\x04\x1ac\x10\xb0\x83\x06\x1aa/}\x039\x01\x03\xa1\x01\xa4av\x81\xaabcix/URN:UVCI:01:CZ:YJUECJ77ZGMQ38DT4D2KU9KSBT7DBZQZbcobCZbdn\x02bdtj2021-07-01bisx(Ministry of Health of the Czech RepublicbmamORG-100030215bmplEU/1/20/1528bsd\x02btgi840539006bvpj1119349007cdobj1974-12-31cnam\xa4bfndJUSTbgnhMIROSLAVcfntdJUSTcgnthMIROSLAVcvere1.3.0'
+2021-09-02 21:44:38,910 [INFO ]  Certificate as JSON: {
+  "1": "CZ",
+  "4": 1662038147,
+  "6": 1630502147,
+  "-260": {
+    "1": {
+      "v": [
+        {
+          "ci": "URN:UVCI:01:CZ:YJUECJ77ZGMQ38DT4D2KU9KSBT7DBZQZ",
+          "co": "CZ",
+          "dn": 2,
+          "dt": "2021-07-01",
+          "is": "Ministry of Health of the Czech Republic",
+          "ma": "ORG-100030215",
+          "mp": "EU/1/20/1528",
+          "sd": 2,
+          "tg": "840539006",
+          "vp": "1119349007"
+        }
+      ],
+      "dob": "1974-12-31",
+      "nam": {
+        "fn": "JUST",
+        "gn": "MIROSLAV",
+        "fnt": "JUST",
+        "gnt": "MIROSLAV"
+      },
+      "ver": "1.3.0"
+    }
+  }
+}

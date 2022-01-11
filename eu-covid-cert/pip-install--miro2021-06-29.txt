@@ -1,0 +1,95 @@
+C:\Users\JustMi\Documents\_Education_miro\dgc-testdata-main>pip install --trusted-host pypi.org --trusted-host files.pythonhosted.org -r tests/requirements.txt
+
+
+Requirement already satisfied: wheel in c:\users\justmi\gitroot\3party\party_python\lib\python3.6\site-packages (from -r tests/requirements.txt (line 2)) (0.33.1)
+Requirement already satisfied: base45 in c:\users\justmi\appdata\local\programs\python\python39\lib\site-packages (from -r tests/requirements.txt (line 3)) (0.3.1)
+Requirement already satisfied: jsonschema in c:\users\justmi\appdata\local\programs\python\python39\lib\site-packages (from -r tests/requirements.txt (line 4)) (3.2.0)
+Collecting jsonref
+  Downloading jsonref-0.2-py3-none-any.whl (9.3 kB)
+Collecting filecache
+  Downloading filecache-0.81-py3-none-any.whl (4.4 kB)
+Collecting pyzbar
+  Downloading pyzbar-0.1.8-py2.py3-none-win_amd64.whl (813 kB)
+     |████████████████████████████████| 813 kB 2.2 MB/s
+Collecting Pillow
+  Downloading Pillow-8.2.0-cp39-cp39-win_amd64.whl (2.2 MB)
+     |████████████████████████████████| 2.2 MB 252 kB/s
+Requirement already satisfied: python-dateutil in c:\users\justmi\gitroot\3party\party_python\lib\python3.6\site-packages (from -r tests/requirements.txt (line 9)) (2.8.0)
+Collecting pytest-md-report
+  Downloading pytest_md_report-0.1.2-py3-none-any.whl (10.0 kB)
+Collecting pytest-html
+  Downloading pytest_html-3.1.1-py3-none-any.whl (14 kB)
+Collecting cose==0.9.dev7
+  Downloading cose-0.9.dev7-py3-none-any.whl (48 kB)
+     |████████████████████████████████| 48 kB 478 kB/s
+Requirement already satisfied: cryptography in c:\users\justmi\gitroot\3party\party_python\lib\python3.6\site-packages (from cose==0.9.dev7->-r tests/requirements.txt (line 14)) (2.1.4)
+Collecting ecdsa
+  Downloading ecdsa-0.17.0-py2.py3-none-any.whl (119 kB)
+     |████████████████████████████████| 119 kB 930 kB/s
+Requirement already satisfied: attrs in c:\users\justmi\appdata\local\programs\python\python39\lib\site-packages (from cose==0.9.dev7->-r tests/requirements.txt (line 14)) (21.2.0)
+Collecting certvalidator
+  Downloading certvalidator-0.11.1-py2.py3-none-any.whl (31 kB)
+Collecting cbor2
+  Downloading cbor2-5.4.0-cp39-cp39-win_amd64.whl (62 kB)
+     |████████████████████████████████| 62 kB 357 kB/s
+Requirement already satisfied: six>=1.11.0 in c:\users\justmi\gitroot\3party\party_python\lib\python3.6\site-packages (from jsonschema->-r tests/requirements.txt (line 4)) (1.12.0)
+Requirement already satisfied: setuptools in c:\users\justmi\gitroot\3party\party_python\lib\python3.6\site-packages (from jsonschema->-r tests/requirements.txt (line 4)) (38.5.1)
+Requirement already satisfied: pyrsistent>=0.14.0 in c:\users\justmi\appdata\local\programs\python\python39\lib\site-packages (from jsonschema->-r tests/requirements.txt (line 4)) (0.18.0)
+Collecting tcolorpy<1,>=0.0.5
+  Downloading tcolorpy-0.1.1-py3-none-any.whl (8.0 kB)
+Collecting typepy<2,>=1.1.1
+  Downloading typepy-1.1.5-py3-none-any.whl (30 kB)
+Collecting pytablewriter<1,>=0.59.0
+  Downloading pytablewriter-0.61.0-py3-none-any.whl (99 kB)
+     |████████████████████████████████| 99 kB 577 kB/s
+Collecting pytest!=6.0.0,<7,>=3.3.2
+  Downloading pytest-6.2.4-py3-none-any.whl (280 kB)
+     |████████████████████████████████| 280 kB 2.2 MB/s
+Collecting DataProperty<2,>=0.50.1
+  Downloading DataProperty-0.50.1-py3-none-any.whl (26 kB)
+Collecting pathvalidate<3,>=2.3.0
+  Downloading pathvalidate-2.4.1-py3-none-any.whl (18 kB)
+Collecting mbstrdecoder<2,>=1.0.0
+  Downloading mbstrdecoder-1.0.1-py3-none-any.whl (7.8 kB)
+Collecting tabledata<2,>=1.1.3
+  Downloading tabledata-1.1.4-py3-none-any.whl (11 kB)
+Requirement already satisfied: chardet<5,>=3.0.4 in c:\users\justmi\gitroot\3party\party_python\lib\python3.6\site-packages (from mbstrdecoder<2,>=1.0.0->pytablewriter<1,>=0.59.0->pytest-md-report->-r tests/requirements.txt (line 10)) (3.0.4)
+Collecting packaging
+  Downloading packaging-20.9-py2.py3-none-any.whl (40 kB)
+     |████████████████████████████████| 40 kB 659 kB/s
+Collecting py>=1.8.2
+  Downloading py-1.10.0-py2.py3-none-any.whl (97 kB)
+     |████████████████████████████████| 97 kB 668 kB/s
+Collecting pluggy<1.0.0a1,>=0.12
+  Downloading pluggy-0.13.1-py2.py3-none-any.whl (18 kB)
+Collecting colorama
+  Downloading colorama-0.4.4-py2.py3-none-any.whl (16 kB)
+Collecting iniconfig
+  Downloading iniconfig-1.1.1-py2.py3-none-any.whl (5.0 kB)
+Collecting toml
+  Downloading toml-0.10.2-py2.py3-none-any.whl (16 kB)
+Collecting atomicwrites>=1.0
+  Downloading atomicwrites-1.4.0-py2.py3-none-any.whl (6.8 kB)
+Requirement already satisfied: pytz>=2018.9 in c:\users\justmi\gitroot\3party\party_python\lib\python3.6\site-packages (from typepy<2,>=1.1.1->pytest-md-report->-r tests/requirements.txt (line 10)) (2018.9)
+Collecting pytest-metadata
+  Downloading pytest_metadata-1.11.0-py2.py3-none-any.whl (10 kB)
+Collecting oscrypto>=0.16.1
+  Downloading oscrypto-1.2.1-py2.py3-none-any.whl (192 kB)
+     |████████████████████████████████| 192 kB 504 kB/s
+Requirement already satisfied: asn1crypto>=0.18.1 in c:\users\justmi\gitroot\3party\party_python\lib\python3.6\site-packages (from certvalidator->cose==0.9.dev7->-r tests/requirements.txt (line 14)) (0.24.0)
+Collecting asn1crypto>=0.18.1
+  Downloading asn1crypto-1.4.0-py2.py3-none-any.whl (104 kB)
+     |████████████████████████████████| 104 kB 930 kB/s
+Requirement already satisfied: idna>=2.1 in c:\users\justmi\gitroot\3party\party_python\lib\python3.6\site-packages (from cryptography->cose==0.9.dev7->-r tests/requirements.txt (line 14)) (2.6)
+Requirement already satisfied: cffi>=1.7 in c:\users\justmi\gitroot\3party\party_python\lib\python3.6\site-packages (from cryptography->cose==0.9.dev7->-r tests/requirements.txt (line 14)) (1.11.5)
+Requirement already satisfied: pycparser in c:\users\justmi\gitroot\3party\party_python\lib\python3.6\site-packages (from cffi>=1.7->cryptography->cose==0.9.dev7->-r tests/requirements.txt (line 14)) (2.18)
+Requirement already satisfied: pyparsing>=2.0.2 in c:\users\justmi\gitroot\3party\party_python\lib\python3.6\site-packages (from packaging->pytest!=6.0.0,<7,>=3.3.2->pytest-md-report->-r tests/requirements.txt (line 10)) (2.3.1)
+Installing collected packages: mbstrdecoder, typepy, packaging, toml, py, pluggy, iniconfig, DataProperty, colorama, atomicwrites, asn1crypto, tcolorpy, tabledata, pytest, pathvalidate, oscrypto, pytest-metadata, pytablewriter, ecdsa, certvalidator, cbor2, pyzbar, pytest-md-report, pytest-html, Pillow, jsonref, filecache, cose
+  Attempting uninstall: asn1crypto
+    Found existing installation: asn1crypto 0.24.0
+    Uninstalling asn1crypto-0.24.0:
+      Successfully uninstalled asn1crypto-0.24.0
+Successfully installed DataProperty-0.50.1 Pillow-8.2.0 asn1crypto-1.4.0 atomicwrites-1.4.0 cbor2-5.4.0 certvalidator-0.11.1 colorama-0.4.4 cose-0.9.dev7 ecdsa-0.17.0 filecache-0.81 iniconfig-1.1.1 jsonref-0.2 mbstrdecoder-1.0.1 oscrypto-1.2.1 packaging-20.9 pathvalidate-2.4.1 pluggy-0.13.1 py-1.10.0 pytablewriter-0.61.0 pytest-6.2.4 pytest-html-3.1.1 pytest-md-report-0.1.2 pytest-metadata-1.11.0 pyzbar-0.1.8 tabledata-1.1.4 tcolorpy-0.1.1 toml-0.10.2 typepy-1.1.5
+
+C:\Users\JustMi\Documents\_Education_miro\dgc-testdata-main>
+

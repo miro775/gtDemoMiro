@@ -1,0 +1,85 @@
+C:\Users\JustMi\gitRoot>git remote -v
+origin  https://gitlab.devops.telekom.de/odl/fia/fia_analysis (fetch)
+origin  https://gitlab.devops.telekom.de/odl/fia/fia_analysis (push)
+
+
+
+git push -u origin udf_first_miro
+
+
+https://docs.github.com/en/get-started/getting-started-with-git/managing-remote-repositories
+
+
+git remote add mirogithub https://github.com/miro775/gtDemoMiro.git
+
+https://github.com/miro775/gtDemoMiro.git
+
+
+C:\Users\JustMi\gitRoot\eu_covid_cert1>git remote -v
+mirogithub      https://github.com/miro775/gtDemoMiro.git (fetch)
+mirogithub      https://github.com/miro775/gtDemoMiro.git (push)
+origin  https://gitlab.devops.telekom.de/odl/fia/fia_analysis (fetch)
+origin  https://gitlab.devops.telekom.de/odl/fia/fia_analysis (push)
+
+------------------
+removing  remote repo:
+
+#0 - remove all  remotes
+
+git remote rm mirogithub
+git remote rm origin
+
+----------------------  C:\Users\JustMi\gitRoot\eu_covid_cert1
+
+#1 - add
+
+git remote add origin https://github.com/miro775/gtDemoMiro.git
+
+#2 
+C:\Users\JustMi\gitRoot\eu_covid_cert1>git fetch
+remote: Enumerating objects: 18, done.
+remote: Total 18 (delta 0), reused 0 (delta 0), pack-reused 18
+Unpacking objects: 100% (18/18), done.
+From https://github.com/miro775/gtDemoMiro
+ * [new branch]      master     -> origin/master
+
+
+--------
+C:\Users\JustMi\gitRoot\eu_covid_cert1>git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        deleted:    README.txt
+        deleted:    file2.txt
+        deleted:    tabulky.txt
+        deleted:    xfile1.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        eu-covid-cert/
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+
+
+
+=====================================
+
+git remote add new_origin https://github.com/robertmazzo/intro-to-protractor.git
+git push new_origin master
+
+------------
+git checkout -b <branch> <remote>/<branch>
+git pull <remote> <branch>
+
+
+----------
+
+git checkout -b BDI-17266-FTTH-split
+
+git push -u origin BDI-17266-FTTH-split

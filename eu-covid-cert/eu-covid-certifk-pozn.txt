@@ -1,0 +1,303 @@
+
+## qr code eu certificate covid
+
+>>  https://www.zive.cz/clanky/v-evropskem-ockovacim-qr-kodu-ktery-budete-ukazovat-na-dovolene-se-skryva-zakodovany-text-takhle-ho-prectete/sc-3-a-210469/default.aspx
+
+
+
+
+
+European eHealth network - digital covid certificate coordination
+base  ------>>>  https://github.com/ehn-dcc-development/
+
+test  subrpject --->>>  https://github.com/eu-digital-green-certificates/dgc-testdata
+                     +  https://github.com/ehn-dcc-development/ehn-sign-verify-python-trivial
+
+
+
+# https://github.com/stapelberg/coronaqr
+
+
+
+
+https://travel.economictimes.indiatimes.com/amp/news/destination/international/decoding-the-eu-green-pass-all-that-you-need-to-know/83916251
+
+https://www.italy24news.com/business/amp/95549
+
+
+https://news.ycombinator.com/item?id=27589913
+??  https://prog.world/reverse-engineering-of-a-qr-code-for-proof-of-vaccination/
+
+
+
++  https://github.com/ehn-dcc-development/ehn-sign-verify-python-trivial
+
+---------------------------------------------------------------
+# https://github.com/eu-digital-green-certificates/dgc-testdata
+C:\Users\JustMi\Documents\_Education_miro\dgc-testdata-main\tests
+
+pip install -r tests/requirements.txt
+
+>>>
+C:\Users\JustMi\Documents\_Education_miro\dgc-testdata-main>pip install -r tests/requirements.txt
+Requirement already satisfied: wheel in c:\users\justmi\gitroot\3party\party_python\lib\python3.6\site-packages (from -r tests/requirements.txt (line 2)) (0.33.1)
+WARNING: Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:1129)'))': /simple/base45/
+
+
+
+
+https://pypi.org/project/base45/
+
+
+
+py -m pip install c:\Users\JustMi\Downloads\python-packages\base45-0.3.1.tar.gz 
+
+>>>
+
+C:\Users\JustMi>py -m pip install c:\Users\JustMi\Downloads\python-packages\base45-0.3.1.tar.gz
+Processing c:\users\justmi\downloads\python-packages\base45-0.3.1.tar.gz
+  Installing build dependencies ... error
+  ERROR: Command errored out with exit status 1:
+   command: 'C:\Users\JustMi\AppData\Local\Programs\Python\Python39\python.exe' 'C:\Users\JustMi\AppData\Local\Temp\pip-standalone-pip-zmvft7sv\__env_pip__.zip\pip' install --ignore-installed --no-user --prefix 'C:\Users\JustMi\AppData\Local\Temp\pip-build-env-geo4ajf8\overlay' --no-warn-script-location --no-binary :none: --only-binary :none: -i https://pypi.org/simple -- 'poetry-core>=1.0.0'
+       cwd: None
+  Complete output (9 lines):
+  WARNING: Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:1129)'))': /simple/poetry-core/
+  
+----------
+
+https://pypi.org/project/poetry-core/
+
+# install to current environment
+pip install /path/to/poetry/managed/project
+
+# build a wheel package
+pip wheel /path/to/poetry/managed/project
+
+
+pip wheel c:\Users\JustMi\Downloads\python-packages\poetry_core-1.0.3-py2.py3-none-any.whl   
+
+
+Processing c:\users\justmi\downloads\python-packages\poetry_core-1.0.3-py2.py3-none-any.whl
+Saved c:\users\justmi\poetry_core-1.0.3-py2.py3-none-any.whl
+Could not fetch URL https://pypi.org/simple/pip/: There was a problem confirming the ssl certificate: HTTPSConnectionPool(host='pypi.org', port=443): Max retries exceeded with url: /simple/pip/ (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:1129)'))) - skipping
+
+>>>
+-----> pip install gensim config --global http.sslVerify false
+
+Just install any package with the "config --global http.sslVerify false" statement
+ 
+
+pip wheel c:\Users\JustMi\Downloads\python-packages\poetry_core-1.0.3-py2.py3-none-any.whl  config --global http.sslVerify false
+
+--------
+pip install --trusted-host pypi.org c:\Users\JustMi\Downloads\python-packages\poetry-core-1.0.3.tar.gz 
+
+-----OK
+
+C:\Users\JustMi>pip install --trusted-host pypi.org c:\Users\JustMi\Downloads\python-packages\poetry-core-1.0.3.tar.gz
+Processing c:\users\justmi\downloads\python-packages\poetry-core-1.0.3.tar.gz
+  Getting requirements to build wheel ... done
+    Preparing wheel metadata ... done
+Building wheels for collected packages: poetry-core
+  Building wheel for poetry-core (PEP 517) ... done
+  Created wheel for poetry-core: filename=poetry_core-1.0.3-py2.py3-none-any.whl size=424185 sha256=9689ad0d9cc55fe7f1a9398d8498841058ea1232c3dc8e8f7a0bb6cf6c21209f
+  Stored in directory: c:\users\justmi\appdata\local\pip\cache\wheels\7a\3a\b5\2d6bb83f0c23aa31561a2bee86afe94a693ed27ee1d652827f
+Successfully built poetry-core
+Installing collected packages: poetry-core
+Successfully installed poetry-core-1.0.3
+
+------------------------
+  
+--OK:
+pip install --trusted-host pypi.org --trusted-host files.pythonhosted.org c:\Users\JustMi\Downloads\python-packages\base45-0.3.1.tar.gz  
+
+Processing c:\users\justmi\downloads\python-packages\base45-0.3.1.tar.gz
+  Installing build dependencies ... done
+  Getting requirements to build wheel ... done
+    Preparing wheel metadata ... done
+Building wheels for collected packages: base45
+  Building wheel for base45 (PEP 517) ... done
+  Created wheel for base45: filename=base45-0.3.1-py3-none-any.whl size=3378 sha256=f1ca0e690cac1da1e8f9496dd4350900e59f608e8890e10654e1a705bee66943
+  Stored in directory: c:\users\justmi\appdata\local\pip\cache\wheels\59\21\fe\3030a58f30e86bfe407e55e5abb0e8b22ab0b9e68b14bc9831
+Successfully built base45
+Installing collected packages: base45
+Successfully installed base45-0.3.1
+
+---------------------------------------
+
+https://pypi.org/project/jsonschema/
+
+
+pip install --trusted-host pypi.org --trusted-host files.pythonhosted.org c:\Users\JustMi\Downloads\python-packages\jsonschema-3.2.0.tar.gz 
+
+Processing c:\users\justmi\downloads\python-packages\jsonschema-3.2.0.tar.gz
+  Installing build dependencies ... done
+  Getting requirements to build wheel ... done
+  Installing backend dependencies ... done
+    Preparing wheel metadata ... done
+Collecting pyrsistent>=0.14.0
+  Downloading pyrsistent-0.18.0-cp39-cp39-win_amd64.whl (62 kB)
+     |████████████████████████████████| 62 kB 435 kB/s
+Collecting attrs>=17.4.0
+  Downloading attrs-21.2.0-py2.py3-none-any.whl (53 kB)
+     |████████████████████████████████| 53 kB 660 kB/s
+Requirement already satisfied: setuptools in c:\users\justmi\gitroot\3party\party_python\lib\python3.6\site-packages (from jsonschema==3.2.0) (38.5.1)
+Requirement already satisfied: six>=1.11.0 in c:\users\justmi\gitroot\3party\party_python\lib\python3.6\site-packages (from jsonschema==3.2.0) (1.12.0)
+Building wheels for collected packages: jsonschema
+  Building wheel for jsonschema (PEP 517) ... done
+  Created wheel for jsonschema: filename=jsonschema-3.2.0-py2.py3-none-any.whl size=56317 sha256=b96343ae5d3f0f993bc05632376e38dff3df6a24d46639f763fbcae29670855e
+  Stored in directory: c:\users\justmi\appdata\local\pip\cache\wheels\0b\82\07\38df5df48e95ffbd0741aaafc8b3c7e00e9048bc55c3af823f
+Successfully built jsonschema
+Installing collected packages: pyrsistent, attrs, jsonschema
+  Attempting uninstall: jsonschema
+    Found existing installation: jsonschema 2.6.0
+    Uninstalling jsonschema-2.6.0:
+      Successfully uninstalled jsonschema-2.6.0
+Successfully installed attrs-21.2.0 jsonschema-3.2.0 pyrsistent-0.18.0
+
+--------------------------------
+
+###### Requirements without Version Specifiers ######`
+wheel
+base45
+jsonschema
+jsonref
+filecache
+pyzbar
+Pillow
+python-dateutil
+pytest-md-report
+pytest-html
+
+###### Requirements with Version Specifiers ######`
+cose == 0.9.dev7
+
+------------------------------------------
+
+# OK,  install to lokal, skip  https cert problem...
+
+C:\Users\JustMi\Documents\_Education_miro\dgc-testdata-main\
+
+pip install --trusted-host pypi.org --trusted-host files.pythonhosted.org -r tests/requirements.txt
+
+
+---------------
+
+
+pytest -C=CZ
+
+----------------------------------------------------
+
+C:\Users\JustMi\Documents\_Education_miro\dgc-testdata-main>pytest -C=CZ
+========================================================================================= test session starts =========================================================================================
+platform win32 -- Python 3.9.6, pytest-6.2.4, py-1.10.0, pluggy-0.13.1
+rootdir: C:\Users\JustMi\Documents\_Education_miro\dgc-testdata-main
+plugins: html-3.1.1, md-report-0.1.2, metadata-1.11.0
+collected 0 items / 1 error
+
+=============================================================================================== ERRORS ================================================================================================
+____________________________________________________________________________ ERROR collecting tests/test_ehealth_certs.py _____________________________________________________________________________
+ImportError while importing test module 'C:\Users\JustMi\Documents\_Education_miro\dgc-testdata-main\tests\test_ehealth_certs.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+..\..\..\appdata\local\programs\python\python39\lib\importlib\__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+tests\test_ehealth_certs.py:54: in <module>
+    from cose.algorithms import Es256, Ps256
+..\..\..\appdata\local\programs\python\python39\lib\site-packages\cose\algorithms.py:10: in <module>
+    from cryptography.hazmat.primitives.asymmetric.ed25519 import Ed25519PrivateKey, Ed25519PublicKey
+E   ModuleNotFoundError: No module named 'cryptography.hazmat.primitives.asymmetric.ed25519'
+======================================================================================= short test summary info =======================================================================================
+ERROR tests/test_ehealth_certs.py
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+========================================================================================== 1 error in 1.97s ===========================================================================================
+
+
+
+
+
+No module named 'cryptography.hazmat.primitives.asymmetric.ed25519
+>>  This is probably because you don't have package cryptography installed.
+
+pip install --trusted-host pypi.org --trusted-host files.pythonhosted.org cryptography
+
+C:\Users\JustMi\Documents\_Education_miro\dgc-testdata-main>pip install --trusted-host pypi.org --trusted-host files.pythonhosted.org cryptography
+Requirement already satisfied: cryptography in c:\users\justmi\gitroot\3party\party_python\lib\python3.6\site-packages (2.1.4)
+Requirement already satisfied: cffi>=1.7 in c:\users\justmi\gitroot\3party\party_python\lib\python3.6\site-packages (from cryptography) (1.11.5)
+Requirement already satisfied: idna>=2.1 in c:\users\justmi\gitroot\3party\party_python\lib\python3.6\site-packages (from cryptography) (2.6)
+Requirement already satisfied: six>=1.4.1 in c:\users\justmi\gitroot\3party\party_python\lib\python3.6\site-packages (from cryptography) (1.12.0)
+Requirement already satisfied: asn1crypto>=0.21.0 in c:\users\justmi\appdata\local\programs\python\python39\lib\site-packages (from cryptography) (1.4.0)
+Requirement already satisfied: pycparser in c:\users\justmi\gitroot\3party\party_python\lib\python3.6\site-packages (from cffi>=1.7->cryptography) (2.18)
+
+
+
+pip uninstall cryptography
+
+C:\Users\JustMi\Documents\_Education_miro\dgc-testdata-main>pip uninstall cryptography
+Found existing installation: cryptography 2.1.4
+Uninstalling cryptography-2.1.4:
+  Would remove:
+    c:\users\justmi\gitroot\3party\party_python\lib\python3.6\site-packages\cryptography-2.1.4.dist-info\*
+    c:\users\justmi\gitroot\3party\party_python\lib\python3.6\site-packages\cryptography\*
+Proceed (y/n)? y
+  Successfully uninstalled cryptography-2.1.4
+
+---------------
+
+C:\Users\JustMi\Documents\_Education_miro\dgc-testdata-main>pip install --trusted-host pypi.org --trusted-host files.pythonhosted.org cryptography
+Collecting cryptography
+  Downloading cryptography-3.4.7-cp36-abi3-win_amd64.whl (1.6 MB)
+     |████████████████████████████████| 1.6 MB 1.7 MB/s
+Collecting cffi>=1.12
+  Downloading cffi-1.14.5-cp39-cp39-win_amd64.whl (179 kB)
+     |████████████████████████████████| 179 kB 1.1 MB/s
+Requirement already satisfied: pycparser in c:\users\justmi\gitroot\3party\party_python\lib\python3.6\site-packages (from cffi>=1.12->cryptography) (2.18)
+Installing collected packages: cffi, cryptography
+  Attempting uninstall: cffi
+    Found existing installation: cffi 1.11.5
+    Uninstalling cffi-1.11.5:
+      Successfully uninstalled cffi-1.11.5
+ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. 
+This behaviour is the source of the following dependency conflicts.
+requests-kerberos 0.12.0 requires winkerberos>=0.5.0; sys_platform == "win32", which is not installed.
+Successfully installed cffi-1.14.5 cryptography-3.4.7
+
+
+
+--- extra:
+pip install --trusted-host pypi.org --trusted-host files.pythonhosted.org winkerberos
+
+
+
+C:\Users\JustMi\Documents\_Education_miro\dgc-testdata-main>pytest -C=CZ
+========================================================================================= test session starts =========================================================================================
+platform win32 -- Python 3.9.6, pytest-6.2.4, py-1.10.0, pluggy-0.13.1
+rootdir: C:\Users\JustMi\Documents\_Education_miro\dgc-testdata-main
+plugins: html-3.1.1, md-report-0.1.2, metadata-1.11.0
+collected 110 items
+
+tests\test_ehealth_certs.py ..........ssssssssss........................................ssssssssssssssssssss....................ssssssssss                                                       [100%]
+
+========================================================================================== warnings summary ===========================================================================================
+..\..\..\gitRoot\3Party\Party_python\lib\python3.6\site-packages\urllib3\util\selectors.py:14
+  C:\Users\JustMi\gitRoot\3Party\Party_python\lib\python3.6\site-packages\urllib3\util\selectors.py:14: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+    from collections import namedtuple, Mapping
+
+..\..\..\gitRoot\3Party\Party_python\lib\python3.6\site-packages\urllib3\_collections.py:2
+  C:\Users\JustMi\gitRoot\3Party\Party_python\lib\python3.6\site-packages\urllib3\_collections.py:2: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+    from collections import Mapping, MutableMapping
+
+-- Docs: https://docs.pytest.org/en/stable/warnings.html
+============================================================================= 70 passed, 40 skipped, 2 warnings in 4.41s ==============================================================================
+
+
+
+===================== # 30.6.2021
+
+https://github.com/ehn-dcc-development/ehn-sign-verify-python-trivial
+
+https://github.com/ehn-dcc-development/hcert-spec/blob/main/hcert_spec.md
+
+Each Participating country is REQUIRED to provide a list of one or more Certificate Signing Certificate Authorities (CSCAs) 
+and a list of all valid Document Signing Certificates (DSCs), and keep these lists current.
+
