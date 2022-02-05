@@ -83,3 +83,41 @@ git pull <remote> <branch>
 git checkout -b BDI-17266-FTTH-split
 
 git push -u origin BDI-17266-FTTH-split
+
+================================================
+
+# 5.2.2022
+
+C:\Users\JustMi\gitRoot\miro775>
+git remote add origin https://github.com/miro775/gtDemoMiro.git
+git clone https://github.com/miro775/gtDemoMiro.git
+
+
+add to PATH ( pip in \scripts subfolder)
+C:\Users\JustMi\AppData\Local\Programs\Python\Python310\
+C:\Users\JustMi\AppData\Local\Programs\Python\Python310\Scripts\
+
+C:\Users\JustMi\gitRoot\miro775\gtDemoMiro\eu-covid-cert>pip install --trusted-host pypi.org --trusted-host files.pythonhosted.org -r requirements1.txt
+
+# # dodatocne:   uz je to doplnene  do requirements1.txt
+pip install --trusted-host pypi.org --trusted-host files.pythonhosted.org cbor
+pip install --trusted-host pypi.org --trusted-host files.pythonhosted.org qrcode
+
+
+-------cmd line
+C:\Users\JustMi\gitRoot\miro775\gtDemoMiro\eu-covid-cert>python ./test_read_eu_cert_base45.py
+Zkopíruj obsah QR kódu:
+
+----------------
+
+
+C:\Users\JustMi\gitRoot\miro775\gtDemoMiro\eu-covid-cert>git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   Decoding-EU-Digital-COVID-Certificate.txt
+        new file:   requirements1.txt
+
+======================================================

@@ -1,0 +1,37 @@
+C:\Users\JustMi\gitRoot\miro775\gtDemoMiro\eu-covid-cert>python ./test_read_eu_cert_base45.py
+Zkopíruj obsah QR kódu: HC1:NCFTZ8B8O8D0PS3VKN54NL84SZJ*MHK78%DUUUNH+18N6WP5YBA%ML$*N6UN8EUATF7/RX+AR59*D8%+QNNEC+S-OA:$D6+MQ:V:0RTDQ:CB0 R/WUY%7L.2:7K%/U5LLDZPC8I3P2YDS4/84P3H+13D4X/JUGIXKST$5L+RSBQK:QHSMI%Q1HU+M40EDGMDIGI10Q$ 86 AI:CVE4TKHBQK0AEH*AVL0V131NJKG476CNIP-B8QKNOPVV-OUARG3IGOHS7L.:MTJJL+SMI7:U7+KLPETEIDTOPLU0$+M2KNL60DZGJJOD%04JB3VRKWS.B8QS5S53OPR99FLK5W94ASAMLH9.N8OOAN5XT6D75WF5DPOCSAK36OS8YHJGAN:AC85TI.FROH$T98%SHPV2 O+Y6UAVPFD1JFP/M.L7A-BFO9P6EO-C4NMC Q5SCI5TKYL-6F:TSX.M54SLGBO6D7CSUTQYRD18K0DBCYHGZ7FO6BYN8YE2DN5SFZOBS*F$ K-9L2DVZQUQ:6:JF
+{-260: {1: {'dob': '1974-12-31',
+            'nam': {'fn': 'JUST',
+                    'fnt': 'JUST',
+                    'gn': 'MIROSLAV',
+                    'gnt': 'MIROSLAV'},
+            'v': [{'ci': 'nd2ahm4axr43dtu7bs9enhs32k7f3fxr',
+                   'co': 'CZ',
+                   'dn': 1,
+                   'dt': '2021-05-20',
+                   'is': 'Ministry of Health of the Czech Republic',
+                   'ma': 'ORG-100030215',
+                   'mp': 'EU/1/20/1528',
+                   'sd': 2,
+                   'tg': '840539006',
+                   'vp': '1119349007'}],
+            'ver': '1.0.1'}},
+ 1: 'CZ',
+ 4: 1654747829,
+ 6: 1623211829}
+----base45----------
+b'x\xdaE\x8c\xbfK\x02Q\x1c\xc0\xb9\x92\xb6\xa8!!\x9c\x8e\x8a~@\x97\xef\xbd\xbbS\x0f\x023\x89,\x12Q+\xaa!\xbc\xef\xbb;\xef\xcc{\xca\xdd)VCH-A\xb8\xd4\xd8r\xe0\xe4\x90S{m\x82\xb5\x14\xfd\r\xd5\xbf\xd0\x10YK\xdb\xe7\xf3\x19>/\x17I\x9f\x9b\xf5\x03\xa9\xd3\xcb\xf5\x8f\xd6\x14:\xdf\xe7F\xdb\x1c$\x0f\x02!\xf0\x9d\xfb\x91P\xe1!.+\xdc\xb0\xcf\xb5\xd5z\xb3\x03\xd4j\xf0L#\xaaiKj\xc3\x91D\xcd\xabE\xc1Utf\xba"9\x8a\x1a\xa2\xd1p\x80V\x06\x03\xd0\x18\x07\x9aW"\x88`\x01\xc9\x02A`\xb9\x8d\xf9\xb4\xc5,\xd7s\x8e\xf9\x8a\xc1\xa7t\xb5\xec\x99\xbf\xe4\x99:\x9f<\xd1\xa9\xc9\xe7\xf4j\r\xca\x16\x05[\xb53\xb9u\x01#\x84\xc4\xc1B\x06\xbbZ^\xdb\t\xe30Aa,\x93\x18\xb8\xda\x10xE+&!YT\x10\x8a@\xbdZ\xc2\x18+\xa24\xb0(\xd5*P\xc2JT\x120\x11DL\x99j\xb7\xc1`\xda\xe6N~\x1b\x8a\xccLo\xe42\xf9\xad\xc4.5\x98\xf7\x17i\x91y\xff\xb5\xae;:^BKxo\xe5f9\xb2\x15\xd4\nc\xdd\xe6X\xac+w\xde\xe2\xc1\xb5\x89\xde5Y\xe8g\xfb\xdf\x9f\xd2\xe1k\xb6\x9f\x9dYL\x8c\x7f=\x963\xbd\xbb\xf4t\xc0\xb8:{\x98[^}\x9e\xa4\xad\xa7\xdb\xf7\x82\xf2\x037Lz*'
+b45str_encode ,   ENCODE  again=
+b'NCFTZ8B8O8D0PS3VKN54NL84SZJ*MHK78%DUUUNH+18N6WP5YBA%ML$*N6UN8EUATF7/RX+AR59*D8%+QNNEC+S-OA:$D6+MQ:V:0RTDQ:CB0 R/WUY%7L.2:7K%/U5LLDZPC8I3P2YDS4/84P3H+13D4X/JUGIXKST$5L+RSBQK:QHSMI%Q1HU+M40EDGMDIGI10Q$ 86 AI:CVE4TKHBQK0AEH*AVL0V131NJKG476CNIP-B8QKNOPVV-OUARG3IGOHS7L.:MTJJL+SMI7:U7+KLPETEIDTOPLU0$+M2KNL60DZGJJOD%04JB3VRKWS.B8QS5S53OPR99FLK5W94ASAMLH9.N8OOAN5XT6D75WF5DPOCSAK36OS8YHJGAN:AC85TI.FROH$T98%SHPV2 O+Y6UAVPFD1JFP/M.L7A-BFO9P6EO-C4NMC Q5SCI5TKYL-6F:TSX.M54SLGBO6D7CSUTQYRD18K0DBCYHGZ7FO6BYN8YE2DN5SFZOBS*F$ K-9L2DVZQUQ:6:JF'
+----base45--zlib.decompress--------
+b'\xd2\x84C\xa1\x01&\xa1\x04H{\x89G\xe8\x8e"0\x83Y\x01\r\xa4\x01bCZ\x04\x1ab\xa1r\xb5\x06\x1a`\xc0?59\x01\x03\xa1\x01\xa4av\x81\xaabcix nd2ahm4axr43dtu7bs9enhs32k7f3fxrbcobCZbdn\x01bdtj2021-05-20bisx(Ministry of Health of the Czech RepublicbmamORG-100030215bmplEU/1/20/1528bsd\x02btgi840539006bvpj1119349007cdobj1974-12-31cnam\xa4bfndJUSTbgnhMIROSLAVcfntdJUSTcgnthMIROSLAVcvere1.0.1X@\x94<6L\x15d`\x0f\xaf\x81\x0f8\xaf5\xaa\xd5?\x15E\x14\xc8\x932)\xcbQ\xcb\xfe\xe94^\xd3Q\xcbQ$,A\x10\xfa\xc1lO\xc8\xaeM#\x04f\x8c\x7f\xc0\'<B\xcd\x18c\x8e\xcc\x9c\xe7`9'
+----base45--zlib.decompress----cbor.loads.value[2]----
+b'\xa4\x01bCZ\x04\x1ab\xa1r\xb5\x06\x1a`\xc0?59\x01\x03\xa1\x01\xa4av\x81\xaabcix nd2ahm4axr43dtu7bs9enhs32k7f3fxrbcobCZbdn\x01bdtj2021-05-20bisx(Ministry of Health of the Czech RepublicbmamORG-100030215bmplEU/1/20/1528bsd\x02btgi840539006bvpj1119349007cdobj1974-12-31cnam\xa4bfndJUSTbgnhMIROSLAVcfntdJUSTcgnthMIROSLAVcvere1.0.1'
+---cbor--from v2--
+{1: 'CZ', 4: 1654747829, 6: 1623211829, -260: {1: {'v': [{'ci': 'nd2ahm4axr43dtu7bs9enhs32k7f3fxr', 'co': 'CZ', 'dn': 1, 'dt': '2021-05-20', 'is': 'Ministry of Health of the Czech Republic', 'ma': 'ORG-100030215', 'mp': 'EU/1/20/1528', 'sd': 2, 'tg': '840539006', 'vp': '1119349007'}], 'dob': '1974-12-31', 'nam': {'fn': 'JUST', 'gn': 'MIROSLAV', 'fnt': 'JUST', 'gnt': 'MIROSLAV'}, 'ver': '1.0.1'}}}
+---cbor2--####
+{1: -7}
+----base45--zlib.decompress----cbor.loads   full ? -vX---
+Tag(18, [b'\xa1\x01&', {4: b'{\x89G\xe8\x8e"0\x83'}, b'\xa4\x01bCZ\x04\x1ab\xa1r\xb5\x06\x1a`\xc0?59\x01\x03\xa1\x01\xa4av\x81\xaabcix nd2ahm4axr43dtu7bs9enhs32k7f3fxrbcobCZbdn\x01bdtj2021-05-20bisx(Ministry of Health of the Czech RepublicbmamORG-100030215bmplEU/1/20/1528bsd\x02btgi840539006bvpj1119349007cdobj1974-12-31cnam\xa4bfndJUSTbgnhMIROSLAVcfntdJUSTcgnthMIROSLAVcvere1.0.1', b"\x94<6L\x15d`\x0f\xaf\x81\x0f8\xaf5\xaa\xd5?\x15E\x14\xc8\x932)\xcbQ\xcb\xfe\xe94^\xd3Q\xcbQ$,A\x10\xfa\xc1lO\xc8\xaeM#\x04f\x8c\x7f\xc0'<B\xcd\x18c\x8e\xcc\x9c\xe7`9"])
+
+C:\Users\JustMi\gitRoot\miro775\gtDemoMiro\eu-covid-cert>

@@ -1,0 +1,219 @@
+ source:     https://blog.hqcodeshop.fi/archives/516-Decoding-EU-Digital-COVID-Certificate.html
+ ---------------------------------------------------------------------------
+
+Friday, August 6. 2021
+If you live in EU, you most definitely have heard of COVID Passport.
+
+Practically speaking, it is a PDF-file A4-sized when printed and can be folded into A6-pocket size. In Finland a sample would look like this:
+
+What's eye-catching is the QR-code in the top right corner. As I'm into all kinds of nerdy stuff, I took a peek what's in it.
+
+After reading some specs and brochures (like https://www.kanta.fi/en/covid-19-certificate) I started to tear this apart and deduced following:
+
+An A4 or the QR-code in it can be easily copied / duplicated
+Payload can be easily forged
+There is a claim: "The certificate has a code for verifying the authenticity"
+My only question was: How is this sane! Why do they think this mechanism they designed makes sense?
+
+QR-code
+Data in QR-code is wrapped multiple times:
+
+STRUCTURE:
+   Base45 encoding [  ZLIB compress  [  CBOR/COSE data with ECDSA signature [COVID certif payload] ] ]
+
+
+This CBOR Object Signing and Encryption (COSE) described in RFC 8152 was a new one for me.
+
+Payload does contain very little of your personal information, but enough to be compared with your ID-card or passport. Also there is your vaccination, test and possible recovery from COVID statuses. Data structure can contain 1, 2 or 3 of those depending if you have been vaccinated or tested, or if you have recovered from the illness.
+
+Python code
+It's always about the details. So, I forked an existing git-repo and did some of my own tinkering. Results are at: https://github.com/HQJaTu/vacdec/tree/certificate-fetch
+
+Original code by Mr. Hanno Böck could read QR-code and do some un-wrapping for it to reveal the payload. As I'm always interested in X.509, digital signatures and cryptography, I improved his code by incorporating the digital signature verification into it.
+
+As CBOR/COSE was new for me, it took a while to get the thing working. In reality the most difficult part was to get my hands into the national public certificates to do some ECDSA signature verifying. It's really bizarre how that material is not made easily available.
+
+Links:
+
+Swagger of DGC-gateway: https://eu-digital-green-certificates.github.io/dgc-gateway/
+This is just for display-purposes, this demo isn't connected to any of the national back-ends
+Sample data for testing verification: https://github.com/eu-digital-green-certificates/dgc-testdata
+All participating nations included
+QR-codes and raw-text ready-to-be-base45-decoded
+Payload JSON_schema: https://github.com/ehn-dcc-development/ehn-dcc-schema/
+Just to be clear, the payload is not JSON
+However, CBOR is effectively binary JSON
+List of all production signature certificates: https://dgcg.covidbevis.se/tp/
+Austrian back-end trust-list in JSON/CBOR: https://greencheck.gv.at/api/masterdata
+Swedish back-end trust-list in CBOR: https://dgcg.covidbevis.se/tp/trust-list
+The idea is for all national back-ends to contain everybody's signing certificate
+Wallet
+Mr. Philipp Trenz from Germany wrote a website to insert your QR-code into your Apple Wallet. Source is at https://github.com/philipptrenz/covidpass and the actual thing is at https://covidpass.eu/
+
+Beautiful! Works perfectly.
+
+Especially in Finland the government is having a vacation. After that they'll think about starting to make plans what to do next. Now thanks to Mr. Trenz every iOS user can have the COVID Certificate in their phones without government invovement.
+
+Finally
+Answers:
+
+Yes, duplication is possible, but not feasible in volume. You can get your hands into somebody else's certificate and can present a proof of vaccination, but verification will display the original name, not yours.
+Yes, there is even source code for creating the QR-code, so it's very easy to forge.
+Yes, the payload has a very strong elliptic curve signature in it. Any forged payloads won't verify.
+Ultimately I was surprised how well designed the entire stack is. It's always nice to see my tax-money put into good use. I have nothing negative to say about the architecture or technologies used.
+
+Bonus:
+At very end of my project, I bumped into Mr. Mathias Panzenböck's code https://github.com/panzi/verify-ehc/. He has an excellent implementation of signature handling, much better than mine. Go check that out too.
+
+
+----------------------------------------------------------------
+
+Comments
+Display comments as (Linear | Threaded)
+
+Hello Jari,
+at first this is a very nice post and very informative.
+I have a question to your following point:
+"but verification will display the original name, not yours"
+What do you mean with verification? If someone scans my QR-code?
+Where do i finde the source code for creating the QR-code?
+Thanks for your help and have a nice day.Comment (1)
+#1 Victor on 2021-08-28 23:47 (Reply)
+If you've done any follow-up on how COVID-passes are verified practically, you'd know what will happen is scanning of the QR-code from your phone or printed piece of paper. Then the scanner's machine (phone, computer, whatever) will emit a beep based on the criteria to indicate success or failure. Success cases would be for fully vaccinated, recovered or recent enough test result. Failure would be for mismatching digital signature, or test result being too old.
+
+What typically isn't done, is the verification on whose QR-code vs. the actual person presenting the QR-code. The only instance this could be checked is at border control. Sitting in a cafe or entering a rock club, your identity wouldn't be checked. There, a forged QR-code would not pass, but a copy of your friend's pass will.
+
+To create the QR-passport, reference implementations are in form of a library.
+Python: https://github.com/ehn-dcc-development/python-hcert
+C#: https://github.com/ehn-dcc-development/hcert-dotnet
+
+There is no ready-made-solution in neither of those, but there is enough library code to create the QR-code for your own application injecting input values to the library. So, some assembly is required to create your forged (unsigned) certificate.Comments (5)
+#1.1 Jari Turkia on 2021-08-29 11:11 (Reply)
+Hi, great job!
+
+I'd like to know something I used your script in order to sign Qrcode Ive generated from my own work, So now using your script Id like to know how I can re-generate qrcode signed (embedded ) w/edcsa algo from your output.js file please ?
+
+./vacdec --image-file qrcode.png --raw-data RAW-STRING.txt --certificates-directory /Users/Apple/vacdec/certs --certificate-db-json-file /Users/Apple/vacdec/certs/roots/Digital_Green_Certificate_Signing_Keys.json --output-json-file test.js
+2022-01-07 21:38:05,764 [INFO ] COVID certificate signed with X.509 certificate.
+2022-01-07 21:38:05,767 [INFO ] X.509 in DER form has SHA-256 beginning with: 00
+2022-01-07 21:38:05,781 [INFO ] Skip verify as no key found from database
+2022-01-07 21:38:05,850 [INFO ] Certificate as JSON: {
+"issuer": "FR",
+"expiry:": "2024-11-27 19:02:34",
+"issued:": "2024-11-27 11:00:00",
+"Health certificate": {
+"1": {
+"Vaccination": [
+{
+"Unique Certificate Identifier: UVCI": "URN:UVCI:01:***************#7",
+"Country of Vaccination": "France",
+"Dose Number": 3,
+"Date of Vaccination": "2021-12-20",
+"Certificate Issuer": "CNAM",
+"Marketing Authorization Holder / Manufacturer": "Biontech Manufacturing GmbH",
+"Medicinal product": "EU/1/20/1525: COVID-19 Vaccine Janssen",
+"Total Series of Doses": 3,
+"Targeted disease or agent": "COVID-19",
+"Vaccine or prophylaxis": "COVID-19 vaccines"
+}
+],
+"Date of birth": "1900-15-04",
+"Name": {
+"Surname": "GROULT",
+"Forename": "CAMILLE",
+"ICAO 9303 standardised surname": "CAMILLE",
+"ICAO 9303 standardised forename": "GROULT"
+},
+"Version": "1.3.0"
+}
+}
+}
+2022-01-07 21:38:05,853 [INFO ] Wrote certificate into test.js
+
+After when I read the qrcode.png nothing are seam to be signedComments (3)
+#1.1.1 Groult on 2022-01-07 22:52 (Reply)
+Do you realize it is not necessary to use both --image-file and --raw-data at the same time? First you need to decide if you're about to decode a QR-code from an image or decode an already decoded QR-code raw data contents.
+
+When you make the choice, your goal should be achievable.Comments (5)
+#1.1.1.1 Jari Turkia on 2022-01-08 13:31 (Reply)
+thanks to reply bro I wan to encode (sign) using X509 certificate please can we work together to dev my script ? Tonight I followed your advice and using verify-ehc I can retrive more details But I can find the way to sign in order to avoid "Signature not recognise" in some App checkers.
+
+merciComments (3)
+#1.1.1.1.1 Groult on 2022-01-09 00:46 (Reply)
+Ok. Let's break this down.
+
+- You want to create COVID certs, not decode the information on existing ones.
+- You're calling the process "signing". Which is kinda ok, one part of the QR-code creation process is signing the encoded content. Anyway, the chosen term threw me off.
+- Your script doing the QR-code creation is called vacdec, which could confuse some people (including me) into thinking you still doing to decoding.
+- Your encoding script's input-arguments are unchanged. Instead of using (as an example) --output-image-file, you're using --image-file from decode script.
+
+This is the worst:
+- The output of your encode-script is exactly the same than decode-script. Your encoding-script's output should indicate some useful details from the encoding process, not to output the decoded data.
+
+Finally: The motive? For what sensible purpose are you generating these QR-codes for?
+All mobile apps I've seen verify the signature from trusted source. Your X.509 cert won't be included, thus, making your generated COVID-certs invalid. What remains is the printed A4 or showing a PDF for anybody not actually verifying the content.
+
+My question is: From software engineering perspective, are you sure you're up for the task?
+
+Two thing will happen:
+1) Explain your motive clearly to get my support
+2) I'll send you email, assuming the address you gave is validComments (5)
+#1.1.1.1.1.1 Jari Turkia on 2022-01-09 09:42 (Reply)
+Thanks again bro,
+
+So, yes Signing or Create for me as new dev (-5y) are same I've already create a trusted Qr code generated Signed in -7 CBOR algo and its work in ehealth.vyncke but like in 'verify-ehc' my 'Kid' are still same 'AA==' and are not recognised first why the Kid still same disipe I change CBOR id ? how I can fix it?
+For reply about my skills and motivation its only for purposes edu only also I always do my best in research and dev in IT & IoT field I build my own FPV racer, I Use sometime my HackRFone, and to be honest with you I dont know now if im a web site builder like in my work or Cyber security analyste CEH in my private time ..
+result from vyncke w/myFAKE_generatedQR:
+COSE Key Id(KID): 0x00
+!!! This KeyId is unknown -- cannot verify!!!
+
+result from vyncke w/myREAL_generatedQR:
+COSE Key Id(KID): 0x840D7EA7010EC422
+And the COSE signature is verified => this digital green certificate is valid.Comments (3)
+#1.1.1.1.1.1.1 Groult on 2022-01-09 22:36 (Reply)
+Hi Victor,
+
+Generating a QR code is relatively very straight forward using any QR code generating library. However to generate the right, verifiable QR code, you first need to generate the right string.
+
+The data itself is just JSON but it needs to be encoded as CBOR and signed using COSE, as Jari described in this post. You obviously need the right private key which only the different authorities of each EU state have.
+
+Verifying the QR code itself is also relatively straight forward. The public keys of all the EU states are available, it is possible to check the QR code is not forged.
+
+This is what we do in our travel app Trotteo (http://www.trotteo.com). I presume this is what the apps to verify the QR code at clubs/restaurants/cafes will do too. And the nice thing is that it can be done locally on the device without sending the qr code data anywhere or even being connected to the internet, which respects all GDPR privacy concerns.
+
+JosefComment (1)
+#1.2 Josef on 2021-10-05 12:39 (Reply)
+It seems, that either private key was calculated or leaked:
+https://www.heise.de/news/Impfzertifikat-fuer-Adolf-Hitler-wird-von-App-Cov-Pass-als-echt-ausgewiesen-6234387.htmlComment (1)
+#1.2.1 Bilbo Beutlin on 2021-10-30 10:43 (Reply)
+Hey Jari,
+
+thank you very much for this very handy peace of software! I am using it to run a FastLane for GreenPass checks on my university.
+But ...
+Today i run into an issue and - as i lack any python knowledge - have no idea whats the problem:
+
+./vacdec --image-file /tmp/gettinger_v3.png
+Traceback (most recent call last):
+File "./vacdec", line 241, in
+main()
+File "./vacdec", line 228, in main
+covid_cert_data = data[0].data.decode()
+IndexError: list index out of range
+
+Can you give me any hint please?
+MartinComment (1)
+#2 Martin Hochreiter on 2021-12-01 21:08 (Reply)
+Yes I do. The same happened to me and I added a check.
+See: https://github.com/HQJaTu/vacdec/commit/dd87cad09bf902886730fcd597ed934fa795f96dComments (5)
+#2.1 Jari Turkia on 2021-12-03 09:18 (Reply)
+Hi,
+thx a lot for your vacdec script :-)
+
+do you have the script also to decode the 2 dates coded in 4 and 6 ?
+
+
+"4": 1686693600,
+"6": 1625641757,Comment (1)
+#3 Kasonh on 2021-12-10 19:21 (Reply)
+Thanks for your input!
+It made me create a completely new functionality into vacdec. See https://blog.hqcodeshop.fi/archives/531-Decoding-EU-Digital-COVID-Certificate-into-human-readable-format.html for details. This improvement includes decoding the CWT-payload's header fields 1, 4 and 6.

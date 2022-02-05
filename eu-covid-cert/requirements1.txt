@@ -1,0 +1,15 @@
+wheel
+base45
+jsonschema
+jsonref
+filecache
+pyzbar
+Pillow
+python-dateutil
+pytest-md-report
+pytest-html
+cbor
+qrcode
+
+###### Requirements with Version Specifiers ######`
+cose == 0.9.dev7
